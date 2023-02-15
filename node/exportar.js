@@ -1,0 +1,19 @@
+console.log(module.exports === this)
+console.log(module.exports === exports)
+
+this.a = 1
+exports.b = 2
+module.exports.c = 3
+
+exports = null
+console.log(module.exports)
+
+exports = {
+    nome: 'Teste'
+}
+
+console.log(module.exports)
+
+//  Quem é retornado é o module.exports, mesmo que tenha mudado o exports duas vezes
+
+module.exports = {publico: true}
